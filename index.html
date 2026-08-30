@@ -6,7 +6,6 @@
 <title>Augusta Romão | RE/MAX Real</title>
 <link rel="icon" type="image/png" href="remax-icon-trademark-Photoroom.png">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
   :root{
     --navy: #0E1826;
@@ -326,19 +325,6 @@
   .btn-secondary{ background: var(--navy); color: var(--parchment); }
   .btn-ghost{ background: transparent; border:1px solid rgba(27,27,24,0.25); color:var(--ink); }
 
-  .qr-row{
-    display:flex; align-items:center; gap:12px;
-    margin-top: 12px;
-    background: rgba(255,255,255,0.55);
-    border: 1px solid rgba(27,27,24,0.08);
-    border-radius: 12px;
-    padding: 10px;
-  }
-  #qrcode{ width:56px; height:56px; flex-shrink:0; }
-  #qrcode img{ display:block; border-radius:6px; }
-  .qr-copy{ font-size:10.8px; color:var(--ink-soft); line-height:1.4; }
-  .qr-copy b{ color:var(--ink); display:block; font-size:11.5px; margin-bottom:2px; }
-
   .footer-note{
     text-align:center;
     font-family: var(--font-mono);
@@ -350,7 +336,7 @@
 
   @media (max-width: 600px) {
     .card-wrap {
-      aspect-ratio: 5 / 8.2;
+      aspect-ratio: 5 / 7.0;
     }
     
     .face.back {
@@ -388,27 +374,6 @@
     .service-chip {
       padding: 6px 8px;
       font-size: 9.5px;
-    }
-    
-    .qr-row {
-      margin-top: 8px;
-      padding: 8px;
-      gap: 8px;
-    }
-    #qrcode {
-      width: 44px;
-      height: 44px;
-    }
-    #qrcode img {
-      width: 44px !important;
-      height: 44px !important;
-    }
-    .qr-copy {
-      font-size: 9.5px;
-    }
-    .qr-copy b {
-      font-size: 10.5px;
-      margin-bottom: 1px;
     }
     
     .cta-row {
@@ -515,11 +480,6 @@
           <div class="service-chip">🤝 Gestão &amp; Consultoria</div>
         </div>
 
-        <div class="qr-row">
-          <div id="qrcode"></div>
-          <div class="qr-copy"><b>Partilhar cartão</b>Aponte a câmara para abrir este cartão digital.</div>
-        </div>
-
         <div class="back-spacer"></div>
 
         <div class="cta-row">
@@ -584,17 +544,7 @@
     URL.revokeObjectURL(url);
   });
 
-  // QR code pointing to the card's own share link (WhatsApp deep link as placeholder target)
-  if (window.QRCode) {
-    new QRCode(document.getElementById("qrcode"), {
-      text: "https://wa.me/351963238765",
-      width: 56,
-      height: 56,
-      colorDark: "#0E1826",
-      colorLight: "#00000000",
-      correctLevel: QRCode.CorrectLevel.M
-    });
-  }
+
 </script>
 
 </body>
