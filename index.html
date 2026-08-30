@@ -472,6 +472,10 @@
       if (e.target.closest('a') || e.target.closest('button')) return;
     card.classList.toggle('flipped');
     });
+    card.addEventListener('touchstart', (e) => {
+  if (e.target.closest('a') || e.target.closest('button')) return;
+  card.classList.toggle('flipped');
+});
 
   // vCard generation
   document.getElementById('saveContact').addEventListener('click', (e) => {
