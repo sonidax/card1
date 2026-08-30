@@ -348,40 +348,7 @@
     margin-top: 4px;
   }
 
-  @media (max-width: 600px) {
-    .card-wrap {
-      aspect-ratio: auto;
-      perspective: none;
-      height: auto;
-      margin-bottom: 16px;
-    }
-    .card {
-      transform-style: flat;
-      height: auto;
-      cursor: default;
-      transform: none !important;
-    }
-    .face {
-      position: relative;
-      inset: auto;
-      backface-visibility: visible;
-      height: auto;
-      overflow: visible;
-      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5), 0 0 0 1px rgba(199,162,74,0.2);
-    }
-    .front {
-      margin-bottom: 24px;
-    }
-    .back {
-      transform: none !important;
-    }
-    .front-spacer {
-      min-height: 24px;
-    }
-    .flip-hint {
-      display: none;
-    }
-  }
+
 </style>
 </head>
 <body>
@@ -500,12 +467,11 @@
 </div>
 
 <script>
-  const card = document.getElementById('card');
+   const card = document.getElementById('card');
   card.addEventListener('click', (e) => {
-    if (window.innerWidth <= 600) return; // Disable flip interaction on mobile
-    if (e.target.closest('a') || e.target.closest('button')) return;
+      if (e.target.closest('a') || e.target.closest('button')) return;
     card.classList.toggle('flipped');
-  });
+    });
 
   // vCard generation
   document.getElementById('saveContact').addEventListener('click', (e) => {
